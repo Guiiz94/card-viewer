@@ -2,7 +2,9 @@ name: Node.js CI
 
 on:
   release:
-    types: [published]
+    types: [released]
+  push:
+    branches: [ main ]
 
 jobs:
   push_to_registry:
