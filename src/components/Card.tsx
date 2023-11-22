@@ -163,7 +163,7 @@ const Card:React.FC<CardProps> = ({name,rarity,image, rarity_index, description}
       onMouseMove={handleMouseMove} 
       onClick={handleSelectCard}>
         <img src={`https://nftstorage.link/ipfs/${image.split('//')[1]}`} alt={name} width={CARD_WIDTH}/>
-        {rarity.toLowerCase() != "common" ? <><div className='glare' style={glareStyle}/>
+        {rarity.toLowerCase() !== "common" ? <><div className='glare' style={glareStyle}/>
         <div className='holo shine' style={holoStyles}/></> : <></>}
         {/* {rarity.toLowerCase() != "common" ? <img className='mask' src={`https://nftstorage.link/ipfs/bafybeic2kfsjge47klq4rkhyraof32hyof6rjl3trxpydzzgom2mqvjg4a/${image.split('/')[3]}`} width={CARD_WIDTH}/> : <></>} */}
       </div>
