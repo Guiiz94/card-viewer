@@ -63,15 +63,9 @@ const Card:React.FC<CardProps> = ({name,rarity,image, rarity_index, description}
     visibility: glarePosition.visible as 'visible' |'hidden'
   };  
 
-  const options = {
-    scale:1.1,
-    speed: 1000,
-    max: 30,
-    transition:true,
-    easing: "cubic-bezier(.03,.98,.52,.99)"
-  };
-
+  
   useEffect(() => {
+    
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     if (isMobile && window.DeviceMotionEvent) {
       window.addEventListener('devicemotion', handleDeviceMotion);
@@ -88,8 +82,16 @@ const Card:React.FC<CardProps> = ({name,rarity,image, rarity_index, description}
   };   
   
   useEffect(() => {
+    const options = {
+      scale:1.1,
+      speed: 1000,
+      max: 30,
+      transition:true,
+      easing: "cubic-bezier(.03,.98,.52,.99)"
+    };
+
     VanillaTilt.init(cardRef.current as HTMLDivElement, options);
-  }, [options]);
+  });
 
   const handleSelectCard = ()=>{
     const windowWidth = window.innerWidth;
